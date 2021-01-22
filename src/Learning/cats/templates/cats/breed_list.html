@@ -1,0 +1,22 @@
+{%extends 'home/header.html'%}
+{% block content %}
+    {% if breeds %}
+        <ul>
+            {% for breed in breeds %}
+                <li>
+                    {{breed.name}}
+                    <a href="{% url 'cats:breed_update' breed.id %}">Update</a>
+                    <a href="{% url 'cats:breed_delete' breed.id %}">Delete</a>
+                    <br>
+                </li>
+            {% endfor %}
+        </ul>
+        <p><a href="{% url 'cats:breed_create' %}">Add a breed</a></p>
+          <p>
+            <a href="{% url 'cats:all' %}">Back to autos</a>
+          </p>
+    {% else %}
+        <p>There is no breed here. <a href="{% url 'cats:breed_create' %}">Create one</a> </p>
+        <p><a href="{% url 'cats:all' %}">Back to cats</a></p>
+    {% endif %}
+{% endblock %}

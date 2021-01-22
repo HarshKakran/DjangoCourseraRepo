@@ -1,0 +1,16 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo" style='margin-left:20px'>Django!!</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/getStarted">Get Started</a></li>
+      <li><a href="https://discord.gg/sentdex">Community</a></li>
+    {% if user.is_authenticated %}
+         <li><a href="/accounts/account">{{user.username|title}}</a></li>
+         <li><a href="/accounts/logout">Logout</a></li>
+    {% else %}
+        <li><a href="/accounts/login">Login</a></li>
+        <li><a href="register">Register</a></li>
+    {% endif %}
+    </ul>
+  </div>
+</nav>

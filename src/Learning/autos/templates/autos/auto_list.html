@@ -1,0 +1,32 @@
+{% extends 'home/header.html' %}
+{% block content %}
+    <h1>Autos</h1>
+    {% if autos %}
+        <ul>
+            {% for auto in autos %}
+            <li>
+               {{ auto.nickname }} ({{ auto.make }})
+              (<a href="{% url 'autos:auto_update' auto.id %}">Update</a> |
+              <a href="{% url 'autos:auto_delete' auto.id %}">Delete</a>) <br/>
+              {{ auto.comments }} ({{ auto.mileage }} miles)
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>
+          Please create some auto profiles.
+        </p>
+    {% endif %}
+        {% if make > 0 %}
+      <a href="{% url 'autos:auto_create' %}">Add an auto</a>
+    {% else %}
+      Please add a make before you add an auto.
+    {% endif %}
+
+    <a href="{% url 'autos:auto_create' %}">Add an auto</a>
+    <p>
+
+        <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make }}) |
+        <a href="{% url 'autos:make_create' %}">Add a make</a>
+      </p>
+{% endblock %}

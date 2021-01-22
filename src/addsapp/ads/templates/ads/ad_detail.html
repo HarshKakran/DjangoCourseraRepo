@@ -1,0 +1,15 @@
+{% extends 'home/header.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+
+    <p>
+        <h2>{{ad.title}}</h2><br>
+        Price : {{ad.price}}<br>
+        Description : {{ad.text}}<br>
+    </p>
+<br>
+    <p>
+        <a href="{% url 'ads:all' %}">All ads</a>
+    </p>
+
+{% endblock %}

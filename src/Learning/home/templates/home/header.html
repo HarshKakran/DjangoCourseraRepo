@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="dj4e-code" content="42159809100714">
+    <meta name="dj4e" content="7f018eb7b301a66658931cb8a93fd6e8">
+    <meta charset="utf-8" />
+    <title>Learning Django!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "author" content="₹øΧτα">
+    <meta name = "keywords" content="still in development!! lol!">
+    <meta name = 'description' content="Just learning Django!! for backend stuff">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href='{% static "tinymce/css/prism.css" %}'>
+    <link rel="shortcut icon" href="{% static 'main/images/django-icon.jpg' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'home/includes/navbar.html' %}
+    {% include 'home/includes/messages.html' %}
+  <div class = 'container' style = "min-height:100%; max-width:80%">
+    <br>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+<script src="{% static "tinymce/js/prism.js" %}"></html>
+</html>

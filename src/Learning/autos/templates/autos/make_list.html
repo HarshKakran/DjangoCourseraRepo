@@ -1,0 +1,22 @@
+{%extends 'home/header.html'%}
+{% block content %}
+    {% if makes %}
+        <ul>
+            {% for make in makes %}
+                <li>
+                    {{make.name}}
+                    <a href="{% url 'autos:make_update' make.id %}">Update</a>
+                    <a href="{% url 'autos:make_delete' make.id %}">Delete</a>
+                    <br>
+                </li>
+            {% endfor %}
+        </ul>
+        <p><a href="{% url 'autos:make_create' %}">Add a make</a></p>
+          <p>
+            <a href="{% url 'autos:all' %}">Back to autos</a>
+          </p>
+    {% else %}
+        <p>There is no make here. <a href="{% url 'autos:make_create' %}">Create one</a> </p>
+        <p><a href="{% url 'autos:all' %}">Back to autos</a></p>
+    {% endif %}
+{% endblock %}
